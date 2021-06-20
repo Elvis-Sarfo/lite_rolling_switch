@@ -96,15 +96,15 @@ class _RollingSwitchState extends State<LiteRollingSwitch>
     return GestureDetector(
       onDoubleTap: () {
         _action();
-        widget.onDoubleTap();
+        if(widget.onDoubleTap!) widget.onDoubleTap!();
       },
       onTap: () {
         _action();
-        widget.onTap();
+        if(widget.onTap!) widget.onTap();
       },
       onPanEnd: (details) {
         _action();
-        widget.onSwipe();
+        if(widget.onSwipe!) widget.onSwipe();
         //widget.onSwipe();
       },
       child: Container(
